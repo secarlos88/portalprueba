@@ -33,3 +33,11 @@ jobs:
             --folder "Pruebas Exploratorias (PRODUCCION)" \ 
             --reporters cli,junit \
             --reporter-junit-export results.xml
+
+      # 5. Upload Test Results (optional)
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: newman-results
+          path: results.xml
+
